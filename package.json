@@ -1,0 +1,67 @@
+{
+  "name": "jest-rest-preset",
+  "version": "0.0.1",
+  "description": "Run API tests using Jest, Axios and AJV",
+  "types": "./types/global.d.ts",
+  "main": "index.js",
+  "homepage": "https://github.com/rupeshmore/jest-rest#readme",
+  "scripts": {
+    "start": "npm run build -- --watch",
+    "build": "tsc",
+    "format": "prettier --write \"*.{js,md}\" \"src/**/*.js\"",
+    "lint": "tsc --noEmit && eslint . --ext .js,.ts",
+    "prepublishOnly": "npm test && npm run lint",
+    "prepare": "npm run build",
+    "preversion": "npm run lint",
+    "test": "jest",
+    "test:example": "npm run build && jest --config=jest.config.example.js --runInBand",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+  },
+  "author": "Rupesh More <“rupesh.more@gmail.com”>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rupeshmore/jest-rest.git"
+  },
+  "keywords": ["api-tests", "jest", "axios", "ajv", "contract-tests", "open-api-tests", "swagger-tests"],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,ts,md}": [
+      "prettier --write"
+    ],
+    "*.{js,ts}": "eslint --fix"
+  },
+  "peerDependencies": {
+    "jest-environment-node": ">=25.x"
+  },
+  "devDependencies": {
+    "@types/axios": "0.14.0",
+    "@types/debug": "^4.1.5",
+    "@types/jest": "^25.1.4",
+    "@types/node": "12.12.2",
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/parser": "^3.1.0",
+    "coveralls": "^3.1.0",
+    "eslint": "^7.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "jest": "^25.2.4",
+    "jest-environment-node": "^25.2.4",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.0.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "ajv": "^6.12.2",
+    "axios": "^0.19.2",
+    "chalk": "^4.0.0",
+    "debug": "^4.1.1",
+    "jest-circus": "^26.0.1"
+  }
+}

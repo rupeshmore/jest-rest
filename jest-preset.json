@@ -1,0 +1,8 @@
+{
+  "globalSetup": "jest-rest-preset/setup.js",
+  "globalTeardown": "jest-rest-preset/teardown.js",
+  "testEnvironment": "jest-rest-preset",
+  "testRunner": "jest-circus/runner",
+  "testTimeout": 30000,
+  "setupFilesAfterEnv": ["jest-rest-preset/setup-files-after-env.js"]
+}

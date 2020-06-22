@@ -1,0 +1,9 @@
+/*
+!/lib/*.js
+!types/
+!index.js
+!jest-preset.json
+!setup-files-after-env.js
+!setup.js
+!teardown.js
+!testEnvironment.js
