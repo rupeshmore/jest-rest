@@ -129,9 +129,12 @@ usage:
 Use environment variable `logger` to log request and/ or response from axios to the console/terminal.
 
 `logger="*request"` - To log axios request to console.
-`logger="*response"` - To log response to console.
-`logger="*info"` - To log request and response to console.
-`logger="*error"` - To log error request and / or response to console.
+
+`logger="*response"` - To log axios response to console.
+
+`logger="*info"` - To log axios request and response to console.
+
+`logger="*error"` - To log axios error request and / or response to console.
 
 
 usage:
