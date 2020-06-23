@@ -1,18 +1,20 @@
 # Jest-Rest 🎪
+
 Jest Rest is a Rest API testing framework using Jest, Axios and Ajv.
 
 Schema definition matching is done using AJV. (one of the fastest schema matcher).
 
 ### Highlights
-- **Debug** 🕵️  - Pause the tests to see what's happening in real-time.
-- **Logger** 📝- log request and response to the terminal for more debugging capability. 
+
+- **Debug** 🕵️ - Pause the tests to see what's happening in real-time.
+- **Logger** 📝- log request and response to the terminal for more debugging capability.
 - **Contract Tests** 🤝 - Perform contract testing / schema validation testing.
 - **Parallel tests** 🧪🧪 - Run parallel tests to speed-up testing.
 
 <!-- [![Coverage Status](https://coveralls.io/repos/github/rupeshmore/jest-rest/badge.svg?branch=master)](https://coveralls.io/github/rupeshmore/jest-rest?branch=master) -->
 
-
 ### Installation
+
 ```bash
 npm install -D jest jest-rest-preset
 ```
@@ -59,12 +61,11 @@ Use Jest-Rest in your tests:
 
 ```js
 describe('Get test', () => {
-
-    test('get', async () => {
-        const get = await axios.get('https://httpbin.org/get', {headers: {token: "sometoken"}});
-        await jestRest.debug();
-        expect(get.status).toBe(200);
-    });
+  test('get', async () => {
+    const get = await axios.get('https://httpbin.org/get', { headers: { token: 'sometoken' } });
+    await jestRest.debug();
+    expect(get.status).toBe(200);
+  });
 });
 ```
 
@@ -77,21 +78,20 @@ You can specify a `jest-rest.config.js` or `jest-rest.config.json` at the root o
 
   /*
   * Define all global config for axios here
-  * 
+  *
   * More info at https://github.com/axios/axios#request-config
   */
   "axios": {},
 
   /*
   * Define all global config for ajv here
-  * 
+  *
   * More info at https://ajv.js.org/#options
   * default option added is {"allError": true}
   */
   "ajv": {}
 }
 ```
-
 
 > Default jest timeout is 30 seconds
 
@@ -111,17 +111,18 @@ Jest-Rest extends the jest matcher to include schema validation using ajv.
 `toMatchSchema`
 
 usage:
+
 ```javascript
-    const schema = {
-    "properties": {
-        "foo": { "type": "string" },
-        "bar": { "type": "number", "maximum": 3 }
-    }
-    };
-    test('schema validation', async () => {
-        const data = {"foo": "abc", "bar": 2};
-        expect(data).toMatchSchema(schema);
-    });
+const schema = {
+  properties: {
+    foo: { type: 'string' },
+    bar: { type: 'number', maximum: 3 },
+  },
+};
+test('schema validation', async () => {
+  const data = { foo: 'abc', bar: 2 };
+  expect(data).toMatchSchema(schema);
+});
 ```
 
 ## Log request & response of axios
@@ -136,18 +137,21 @@ Use environment variable `logger` to log request and/ or response from axios to 
 
 `logger="*error"` - To log axios error request and / or response to console.
 
-
 usage:
 On Windows cmd
+
 ```sh
 set logger=*request
 ```
 
 using powershell
+
 ```sh
 $env:logger="*request, *response"
 ```
+
 on Mac/linux
+
 ```sh
 export logger="*request, *response"
 ```
@@ -164,13 +168,13 @@ module.exports = {
   transform: {
     '^.+\\.ts$': 'ts-jest',
   },
-}
+};
 ```
 
 Types are also available, which you can either use via directly in your test:
 
-
 or at your central `tsconfig.json` either via `types`:
+
 ```json
 {
   "compilerOptions": {
@@ -179,23 +183,21 @@ or at your central `tsconfig.json` either via `types`:
 }
 ```
 
- or via `files`:
+or via `files`:
 
 ```json
 {
-  "files": [
-    "@types/jest",
-    "node_modules/jest-rest-preset/types/global.d.ts",
-  ]
+  "files": ["@types/jest", "node_modules/jest-rest-preset/types/global.d.ts"]
 }
 ```
+
 ## HTML Reporters
 
 There are multiple Html reporter plugin's available. Feel free to add as per your choice.
+
 - https://github.com/zaqqaz/jest-allure
 - https://github.com/dkelosky/jest-stare
 - https://github.com/Hazyzh/jest-html-reporters
-
 
 ## Inspiration
 
