@@ -8,7 +8,7 @@
   "scripts": {
     "start": "npm run build -- --watch",
     "build": "tsc",
-    "format": "prettier --write \"*.{js,md}\" \"src/**/*.js\"",
+    "format": "prettier --write \"*.{js,md}\" \"src/**/*.ts\"",
     "lint": "tsc --noEmit && eslint . --ext .js,.ts",
     "prepublishOnly": "npm test && npm run lint",
     "prepare": "npm run build",
