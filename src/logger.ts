@@ -132,13 +132,9 @@ const formatRequest = (req: AxiosRequestConfig): AxiosRequestConfig => {
 };
 
 const formatResponse = (res: AxiosResponse) => {
-  let body = res.data;
+  const body = res.data;
   const headers = res.headers;
   const status = res.status;
-
-  if (headers['content-type'].includes('application/json')) {
-    body = body.json;
-  }
 
   return {
     status,
