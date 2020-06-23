@@ -1,6 +1,6 @@
 {
   "name": "jest-rest-preset",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Run API tests using Jest, Axios and AJV",
   "types": "./types/global.d.ts",
   "main": "index.js",
