@@ -1,6 +1,6 @@
 {
   "name": "jest-rest-preset",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Run API tests using Jest, Axios and AJV",
   "types": "./types/global.d.ts",
   "main": "index.js",
@@ -25,7 +25,15 @@
     "type": "git",
     "url": "git+https://github.com/rupeshmore/jest-rest.git"
   },
-  "keywords": ["api-tests", "jest", "axios", "ajv", "contract-tests", "open-api-tests", "swagger-tests"],
+  "keywords": [
+    "api-tests",
+    "jest",
+    "axios",
+    "ajv",
+    "contract-tests",
+    "open-api-tests",
+    "swagger-tests"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
