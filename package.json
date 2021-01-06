@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "ajv": "^6.12.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "chalk": "^4.0.0",
     "debug": "^4.1.1",
     "jest-circus": "^26.0.1"
